@@ -37,16 +37,23 @@ class RoleData extends StaticData {
 
     public function doLoad() {
         $records = [
-            Role::ID_ADMINISTRATOR => 'Administrator',
-            Role::ID_TRANSLATOR => 'Translator',
+            Role::ID_ADMINISTRATOR => [
+                'name' => 'Administrator',
+                'role' => 'ROLE_ADMIN'
+            ],
+            Role::ID_TRANSLATOR => [
+                'name' => 'Translator',
+                'role' => 'ROLE_TRANSLATOR'
+            ],
         ];
 
-        foreach ($records as $id => $name) {
+        foreach ($records as $id => $role) {
             if (!$this->find(Role::class, $id)) {
-                $record = new Role();
-                $record->setId($id);
-                $record->setName($name);
-                $this->persist($record);
+                $entity = new Role();
+                $entity->setId($id);
+                $entity->setName($role['name']);
+                $entity->setRole($role['role']);
+                $this->persist($entity);
             }
         }
     }
