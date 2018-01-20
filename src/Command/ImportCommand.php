@@ -23,7 +23,7 @@ class ImportCommand extends ContainerAwareCommand {
 
     protected function configure() {
         $this
-            ->setName('forci_static_data:import')
+            ->setName('forci_static_data:load')
             ->addOption('bundle', 'b', InputOption::VALUE_OPTIONAL, 'Bundle to load for', null)
             ->setDescription('Import Static Data for Bundle(s)');
     }

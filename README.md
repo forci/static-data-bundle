@@ -59,12 +59,12 @@ Note, that this only happens on-demand and will *NOT* slow down your application
 
 # Usage
 
-All you need to do is run the `./bin/console forci_static_data:import` command.
+All you need to do is run the `./bin/console forci_static_data:load` command.
 You can also add this command to your deployment flow. This way, adding new static entities is a breeze. 
 This is especially useful when development happens by multiple developers, in multiple different branches and you want to keep migrations clean.
 Having multiple branches and doing refactoring in these often leads to unexpected crashes upon deployment to production due to the way DoctrineMigrationsBundle works.
 
-If you would like to import the static data for only one bundle, run `./bin/console forci_static_data:import -b YourBundle` or `./bin/console forci_static_data:import --bundle=YourBundle`
+If you would like to import the static data for only one bundle, run `./bin/console forci_static_data:load -b YourBundle` or `./bin/console forci_static_data:load --bundle=YourBundle`
 
 # Advanced Usage
 
