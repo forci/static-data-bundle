@@ -19,7 +19,8 @@ forci_static_data:
         -
            bundle: Frontend
            # Note: When looking up classes, this bundle converts slashes to namespace separators
-           directory: Some/Directory 
+           directory: Some/Directory
+           em: some_other_em
         - Admin
 ```
 
