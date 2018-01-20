@@ -1,7 +1,7 @@
 {
     "name": "forci/static-data-bundle",
     "type": "symfony-bundle",
-    "description": "Static Data Import for applications that need",
+    "description": "Static Data Import for applications that need pre-defined entities with known static IDs",
     "keywords": ["static data", "fixture", "symfony", "wucdbm", "forci"],
     "authors": [
         {
