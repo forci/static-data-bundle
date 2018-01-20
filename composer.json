@@ -1,7 +1,7 @@
 {
     "name": "forci/static-data-bundle",
     "type": "symfony-bundle",
-    "description": "Static Data Import for applications that need pre-defined entities with known static IDs",
+    "description": "Static Data Import for applications that need pre-defined entities with IDs",
     "keywords": ["static data", "fixture", "symfony", "wucdbm", "forci"],
     "authors": [
         {
@@ -11,7 +11,7 @@
         }
     ],
     "require": {
-        "php": ">=7.1.13",
+        "php": ">=7.1.3",
         "symfony/finder": "~2.0|~3.0|~4.0",
         "doctrine/orm": "~2.5",
         "symfony/framework-bundle": "~2.0|~3.0|~4.0"
