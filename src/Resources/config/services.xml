@@ -1,0 +1,19 @@
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+
+        <service id="forci_static_data.data_finder" class="Forci\Bundle\StaticDataBundle\StaticData\DataFinder">
+            <argument type="service" id="kernel"/>
+            <argument type="service" id="service_container"/>
+            <argument>%forci_static_data.config.bundles%</argument>
+        </service>
+
+        <service id="forci_static_data.data_loader" class="Forci\Bundle\StaticDataBundle\StaticData\DataLoader">
+            <argument type="service" id="forci_static_data.data_finder"/>
+        </service>
+
+    </services>
+
+</container>

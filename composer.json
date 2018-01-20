@@ -1,0 +1,30 @@
+{
+    "name": "forci/static-data-bundle",
+    "type": "symfony-bundle",
+    "description": "Static Data Import for applications that need",
+    "keywords": ["static data", "fixture", "symfony", "wucdbm", "forci"],
+    "authors": [
+        {
+            "name": "Martin Kirilov",
+            "email": "wucdbm@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=7.1.3",
+        "symfony/finder": "~2.0|~3.0|~4.0",
+        "doctrine/orm": "~2.5",
+        "symfony/framework-bundle": "~2.0|~3.0|~4.0"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^2.8",
+        "wucdbm/php-cs-fixers": "~0.1"
+    },
+    "autoload": {
+        "psr-4": { "Forci\\Bundle\\StaticDataBundle\\": "src" }
+    },
+    "config": {
+        "bin-dir": "bin"
+    },
+    "license": "MIT"
+}
