@@ -23,6 +23,14 @@ forci_static_data:
         - Admin
 ```
 
+The Static Data bundle will look into each `bundle`'s configured `directory` (`StaticData` by default) and pick all `*Data.php` files.
+Then, if there is a service with an ID equal to the FQCN, or if the class is a subclass of `Forci\Bundle\StaticDataBundle\StaticData\StaticData`, it will be constructed and added to a ``Forci\Bundle\StaticDataBundle\StaticData\DataCollection`.
+Note, that this only happens on-demand and will *NOT* slow down your application's performance besides having to load another bundle and process its configs.
+
+# Usage
+
+By default, you need to place your StaticData files in `BundleRootDir/StaticData`. Take a look at the below example for a bundle named `App` (Please notice the missing Bundle suffix! if you're using it, you need to specify the full bundle name in your config, eg AppBundle)
+
 ```php
 <?php
 
@@ -59,12 +67,6 @@ class RoleData extends StaticData {
     }
 }
 ```
-
-The Static Data bundle will look into each `bundle`'s configured `directory` and pick all `*Data.php` files.
-Then, if there is a service with an ID equal to the FQCN, or if the class is a subclass of `Forci\Bundle\StaticDataBundle\StaticData\StaticData`, it will be constructed and added to a ``Forci\Bundle\StaticDataBundle\StaticData\DataCollection`.
-Note, that this only happens on-demand and will *NOT* slow down your application's performance besides having to load another bundle and process its configs.
-
-# Usage
 
 All you need to do is run the `./bin/console forci_static_data:load` command.
 You can also add this command to your deployment flow. This way, adding new static entities is a breeze. 
