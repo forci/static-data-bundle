@@ -30,9 +30,9 @@ class Configuration implements ConfigurationInterface {
                             ->ifString()
                             ->then(function ($v) {
                                 return [
-                                'bundle' => $v,
-                                'em' => 'default'
-                            ];
+                                    'bundle' => $v,
+                                    'em' => 'default'
+                                ];
                             })
                         ->end()
                         ->children()
