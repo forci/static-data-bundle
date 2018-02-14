@@ -11,7 +11,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Forci\Bundle\StaticDataBundle;
+namespace Forci\Bundle\StaticData;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 

@@ -11,9 +11,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Forci\Bundle\StaticDataBundle\Command;
+namespace Forci\Bundle\StaticData\Command;
 
-use Forci\Bundle\StaticDataBundle\StaticData\Exception\UnsupportedBundleException;
+use Forci\Bundle\StaticData\StaticData\Exception\UnsupportedBundleException;
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;

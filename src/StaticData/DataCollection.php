@@ -11,7 +11,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Forci\Bundle\StaticDataBundle\StaticData;
+namespace Forci\Bundle\StaticData\StaticData;
 
 class DataCollection extends \ArrayIterator implements StaticDataInterface {
 

@@ -11,9 +11,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Forci\Bundle\StaticDataBundle\StaticData;
+namespace Forci\Bundle\StaticData\StaticData;
 
-use Forci\Bundle\StaticDataBundle\StaticData\Exception\UnsupportedBundleException;
+use Forci\Bundle\StaticData\StaticData\Exception\UnsupportedBundleException;
 
 class DataLoader {
 

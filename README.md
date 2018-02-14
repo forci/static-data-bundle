@@ -4,7 +4,7 @@
 
 Add the bundle to your bundles array
 ```php
-new \Forci\Bundle\StaticDataBundle\ForciStaticDataBundle(),
+new \Forci\Bundle\StaticData\ForciStaticDataBundle(),
 ```
 
 Configure your bundles. These are the bundles that have StaticData that needs to be imported
@@ -25,7 +25,7 @@ forci_static_data:
 ```
 
 The Static Data bundle will look into each `bundle`'s configured `directory` (`StaticData` by default) and pick all `*Data.php` files.
-Then, if there is a service with an ID equal to the FQCN, or if the class is a subclass of `Forci\Bundle\StaticDataBundle\StaticData\StaticData`, it will be constructed and added to a ``Forci\Bundle\StaticDataBundle\StaticData\DataCollection`.
+Then, if there is a service with an ID equal to the FQCN, or if the class is a subclass of `Forci\Bundle\StaticData\StaticData\StaticData`, it will be constructed and added to a ``Forci\Bundle\StaticData\StaticData\DataCollection`.
 Note, that this only happens on-demand and will *NOT* slow down your application's performance besides having to load another bundle and process its configs.
 
 # Usage
@@ -40,7 +40,7 @@ By default, you need to place your StaticData files in `BundleRootDir/StaticData
 namespace App\StaticData;
 
 use App\Entity\Role;
-use Forci\Bundle\StaticDataBundle\StaticData\StaticData;
+use Forci\Bundle\StaticData\StaticData\StaticData;
 
 class RoleData extends StaticData {
 
@@ -79,8 +79,8 @@ If you would like to import the static data for only one bundle, run `./bin/cons
 # Advanced Usage
 
 This bundle registers two services:
-- `forci_static_data.data_finder` - instance of `Forci\Bundle\StaticDataBundle\StaticData\DataFinder`
-- `forci_static_data.data_loader` - instance of `Forci\Bundle\StaticDataBundle\StaticData\DataLoader`
+- `forci_static_data.data_finder` - instance of `Forci\Bundle\StaticData\StaticData\DataFinder`
+- `forci_static_data.data_loader` - instance of `Forci\Bundle\StaticData\StaticData\DataLoader`
 
 You can use those to find and/or load your static data in any way you would like - you can embed it in your own commands.
 

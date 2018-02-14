@@ -11,10 +11,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Forci\Bundle\StaticDataBundle\StaticData;
+namespace Forci\Bundle\StaticData\StaticData;
 
 use Doctrine\ORM\EntityManager;
-use Forci\Bundle\StaticDataBundle\StaticData\Exception\UnsupportedBundleException;
+use Forci\Bundle\StaticData\StaticData\Exception\UnsupportedBundleException;
 use Symfony\Component\DependencyInjection\ContainerAwareInterface;
 use Symfony\Component\DependencyInjection\ContainerAwareTrait;
 use Symfony\Component\DependencyInjection\ContainerInterface;
