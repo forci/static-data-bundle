@@ -30,10 +30,10 @@ class DataFinder implements ContainerAwareInterface {
     protected $kernel;
 
     /** @var array[] */
-    protected $config;
+    protected $config = [];
 
     /** @var string[] */
-    protected $bundles;
+    protected $bundles = [];
 
     public function __construct(KernelInterface $kernel, ContainerInterface $container, array $config) {
         $this->kernel = $kernel;
