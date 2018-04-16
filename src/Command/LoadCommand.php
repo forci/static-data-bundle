@@ -13,13 +13,23 @@
 
 namespace Forci\Bundle\StaticData\Command;
 
+use Forci\Bundle\StaticData\StaticData\DataLoader;
 use Forci\Bundle\StaticData\StaticData\Exception\UnsupportedBundleException;
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
+use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 
-class ImportCommand extends ContainerAwareCommand {
+class LoadCommand extends Command {
+
+    /** @var DataLoader */
+    protected $loader;
+
+    public function __construct(DataLoader $loader) {
+        parent::__construct();
+        $this->loader = $loader;
+    }
 
     protected function configure() {
         $this
@@ -29,15 +39,13 @@ class ImportCommand extends ContainerAwareCommand {
     }
 
     protected function execute(InputInterface $input, OutputInterface $output) {
-        $loader = $this->getContainer()->get('forci_static_data.data_loader');
-
         $bundle = $input->getOption('bundle');
 
         if ($bundle) {
             $output->writeln(sprintf('Loading StaticData for bundle "%s"', $bundle));
 
             try {
-                $loader->loadForBundle($bundle);
+                $this->loader->loadForBundle($bundle);
             } catch (UnsupportedBundleException $e) {
                 $output->writeln(sprintf('<error>%s</error>', $e->getMessage()));
             }
@@ -47,6 +55,6 @@ class ImportCommand extends ContainerAwareCommand {
 
         $output->writeln('Loading StaticData for all configured bundles');
 
-        $loader->loadAll();
+        $this->loader->loadAll();
     }
 }

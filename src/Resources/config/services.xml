@@ -14,6 +14,11 @@
             <argument type="service" id="forci_static_data.data_finder"/>
         </service>
 
+        <service id="forci_static_data.command.load" class="Forci\Bundle\StaticData\Command\LoadCommand">
+            <argument type="service" id="forci_static_data.data_loader"/>
+            <tag name="console.command" command="forci_static_data:load" />
+        </service>
+
     </services>
 
 </container>
