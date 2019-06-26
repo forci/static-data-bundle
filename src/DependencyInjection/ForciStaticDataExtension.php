@@ -21,34 +21,11 @@ use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 class ForciStaticDataExtension extends Extension {
 
     public function load(array $configs, ContainerBuilder $container) {
-        $configuration = $this->getConfiguration($configs, $container);
-        $config = $this->processConfiguration($configuration, $configs);
-
         $loader = new XmlFileLoader(
             $container,
             new FileLocator(__DIR__.'/../Resources/config')
         );
 
-        $bag = $container->getParameterBag();
-
-        $bag->set('forci_static_data.config', $config);
-        $bag->set('forci_static_data.config.bundles', $config['bundles']);
-
         $loader->load('services.xml');
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getConfiguration(array $config, ContainerBuilder $container) {
-        return new Configuration();
-    }
-
-    public function getXsdValidationBasePath() {
-        return __DIR__.'/../Resources/config/';
-    }
-
-    public function getNamespace() {
-        return 'http://www.example.com/symfony/schema/';
     }
 }

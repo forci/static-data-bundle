@@ -13,8 +13,15 @@
 
 namespace Forci\Bundle\StaticData;
 
+use Forci\Bundle\StaticData\DependencyInjection\Compiler\LoadersCompiler;
+use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 class ForciStaticDataBundle extends Bundle {
 
+    public function build(ContainerBuilder $container) {
+        parent::build($container);
+
+        $container->addCompilerPass(new LoadersCompiler());
+    }
 }

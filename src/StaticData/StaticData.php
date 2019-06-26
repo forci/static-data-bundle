@@ -18,7 +18,7 @@ use Symfony\Component\DependencyInjection\ContainerAwareInterface;
 use Symfony\Component\DependencyInjection\ContainerAwareTrait;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
-abstract class StaticData implements StaticDataInterface, ContainerAwareInterface {
+abstract class StaticData implements StaticDataLoaderInterface, ContainerAwareInterface {
 
     use ContainerAwareTrait;
 

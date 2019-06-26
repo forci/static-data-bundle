@@ -11,7 +11,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Forci\Bundle\StaticData\StaticData\Exception;
+namespace Forci\Bundle\StaticData\Loader\Exception;
 
 class UnsupportedBundleException extends \Exception {
 

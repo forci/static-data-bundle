@@ -13,7 +13,7 @@
 
 namespace Forci\Bundle\StaticData\StaticData;
 
-interface StaticDataInterface {
+interface StaticDataLoaderInterface {
 
     public function load();
 }
