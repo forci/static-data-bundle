@@ -10,6 +10,11 @@
             <argument type="service" id="forci_static_data.registry"/>
         </service>
 
+        <service id="Forci\Bundle\StaticData\Command\ImportCommand">
+            <argument type="service" id="forci_static_data.data_loader"/>
+            <tag name="console.command"/>
+        </service>
+
     </services>
 
 </container>
