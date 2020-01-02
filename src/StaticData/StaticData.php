@@ -45,7 +45,7 @@ abstract class StaticData implements StaticDataLoaderInterface, ContainerAwareIn
         $this->em->persist($entity);
     }
 
-    public function flush($entity = null) {
-        $this->em->flush($entity);
+    public function flush(/* $entity = null */) {
+        $this->em->flush(/* $entity */);
     }
 }
