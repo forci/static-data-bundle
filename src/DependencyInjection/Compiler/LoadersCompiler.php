@@ -35,10 +35,14 @@ class LoadersCompiler implements CompilerPassInterface {
                     $em = sprintf('doctrine.orm.%s_entity_manager', $tags[0]['em']);
                 }
 
-                $loaderDefinition->setArguments([
-                    new Reference($em),
-                    new Reference('service_container')
-                ]);
+                $loaderDefinition->addMethodCall(
+                    'setContainer',
+                    [new Reference('service_container')]
+                );
+                $loaderDefinition->addMethodCall(
+                    'setEm',
+                    [new Reference($em)]
+                );
             }
 
             $definition->addMethodCall(
