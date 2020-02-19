@@ -46,6 +46,8 @@ class ImportCommand extends Command {
                 $this->loader->loadForBundle($bundle);
             } catch (UnsupportedBundleException $e) {
                 $output->writeln(sprintf('<error>%s</error>', $e->getMessage()));
+
+                return 1;
             }
 
             return 0;
