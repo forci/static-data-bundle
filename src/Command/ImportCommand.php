@@ -48,11 +48,13 @@ class ImportCommand extends Command {
                 $output->writeln(sprintf('<error>%s</error>', $e->getMessage()));
             }
 
-            return;
+            return 0;
         }
 
         $output->writeln('Loading StaticData for all configured bundles');
 
         $this->loader->load();
+
+        return 0;
     }
 }
