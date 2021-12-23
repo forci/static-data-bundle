@@ -41,7 +41,7 @@ class Registry {
          * @var string
          * @var StaticDataLoaderInterface[] $loaders
          */
-        foreach ($this->loaders as $bundle => $loaders) {
+        foreach ($this->loaders as $loaders) {
             /** @var StaticDataLoaderInterface $loader */
             foreach ($loaders as $loader) {
                 $all[] = $loader;
