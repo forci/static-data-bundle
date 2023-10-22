@@ -16,16 +16,15 @@ namespace Forci\Bundle\StaticData\Loader;
 use Forci\Bundle\StaticData\Loader\Exception\UnsupportedBundleException;
 use Forci\Bundle\StaticData\StaticData\StaticDataLoaderInterface;
 
-class DataLoader {
+class DataLoader
+{
 
-    /** @var Registry */
-    private $registry;
-
-    public function __construct(Registry $registry) {
-        $this->registry = $registry;
+    public function __construct(private Registry $registry)
+    {
     }
 
-    public function load() {
+    public function load(): void
+    {
         $this->loadLoaders(...$this->registry->all());
     }
 
@@ -34,12 +33,13 @@ class DataLoader {
      *
      * @throws UnsupportedBundleException
      */
-    public function loadForBundle(string $bundle) {
+    public function loadForBundle(string $bundle): void
+    {
         $this->loadLoaders(...$this->registry->forBundle($bundle));
     }
 
-    private function loadLoaders(StaticDataLoaderInterface ...$loaders) {
-        /** @var StaticDataLoaderInterface $loader */
+    private function loadLoaders(StaticDataLoaderInterface ...$loaders): void
+    {
         foreach ($loaders as $loader) {
             $loader->load();
         }

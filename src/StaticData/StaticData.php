@@ -25,7 +25,8 @@ abstract class StaticData implements StaticDataLoaderInterface, ContainerAwareIn
     /** @var EntityManager */
     protected $em;
 
-    final public function load() {
+    final public function load(): void
+    {
         $this->doLoad();
         $this->flush();
     }
@@ -36,11 +37,13 @@ abstract class StaticData implements StaticDataLoaderInterface, ContainerAwareIn
         return $this->em->find($class, $id);
     }
 
-    public function persist($entity) {
+    public function persist($entity): void
+    {
         $this->em->persist($entity);
     }
 
-    public function flush(/* $entity = null */) {
+    public function flush(/* $entity = null */): void
+    {
         $this->em->flush(/* $entity */);
     }
 

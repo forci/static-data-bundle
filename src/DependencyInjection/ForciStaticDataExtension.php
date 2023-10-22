@@ -20,7 +20,8 @@ use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 
 class ForciStaticDataExtension extends Extension {
 
-    public function load(array $configs, ContainerBuilder $container) {
+    public function load(array $configs, ContainerBuilder $container): void
+    {
         $loader = new XmlFileLoader(
             $container,
             new FileLocator(__DIR__.'/../Resources/config')

@@ -15,5 +15,5 @@ namespace Forci\Bundle\StaticData\StaticData;
 
 interface StaticDataLoaderInterface {
 
-    public function load();
+    public function load(): void;
 }

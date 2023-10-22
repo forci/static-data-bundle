@@ -23,7 +23,8 @@ class Registry {
      */
     private $loaders = [];
 
-    public function addLoader(StaticDataLoaderInterface $loader, ?string $bundle) {
+    public function addLoader(StaticDataLoaderInterface $loader, ?string $bundle): void
+    {
         if (!$bundle) {
             $bundle = '_';
         }
@@ -56,7 +57,8 @@ class Registry {
      *
      * @throws UnsupportedBundleException
      */
-    public function forBundle(string $bundle) {
+    public function forBundle(string $bundle): array
+    {
         if (!isset($this->loaders[$bundle])) {
             throw new UnsupportedBundleException();
         }

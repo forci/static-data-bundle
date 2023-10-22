@@ -20,23 +20,18 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 
-class ImportCommand extends Command {
+class ImportCommand extends Command
+{
 
-    /** @var DataLoader */
-    private $loader;
-
-    public function __construct(DataLoader $loader) {
+    public function __construct(private DataLoader $loader)
+    {
         parent::__construct('forci_static_data:load');
-        $this->loader = $loader;
-    }
-
-    protected function configure() {
-        $this
-            ->addOption('bundle', 'b', InputOption::VALUE_OPTIONAL, 'Bundle to load for', null)
+        $this->addOption('bundle', 'b', InputOption::VALUE_OPTIONAL, 'Bundle to load for', null)
             ->setDescription('Import Static Data for Bundle(s)');
     }
 
-    protected function execute(InputInterface $input, OutputInterface $output) {
+    protected function execute(InputInterface $input, OutputInterface $output): int
+    {
         $bundle = $input->getOption('bundle');
 
         if ($bundle) {
