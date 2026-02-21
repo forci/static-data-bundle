@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 /*
  * This file is part of the ForciStaticDataBundle package.
@@ -14,13 +14,11 @@
 namespace Forci\Bundle\StaticData\StaticData;
 
 use Doctrine\ORM\EntityManager;
-use Symfony\Component\DependencyInjection\ContainerAwareInterface;
-use Symfony\Component\DependencyInjection\ContainerAwareTrait;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
-abstract class StaticData implements StaticDataLoaderInterface, ContainerAwareInterface {
+abstract class StaticData implements StaticDataLoaderInterface {
 
-    use ContainerAwareTrait;
+    protected ContainerInterface $container;
 
     /** @var EntityManager */
     protected $em;
@@ -51,4 +49,8 @@ abstract class StaticData implements StaticDataLoaderInterface, ContainerAwareIn
         $this->em = $em;
     }
 
+    public function setContainer(ContainerInterface $container): void
+    {
+        $this->container = $container;
+    }
 }

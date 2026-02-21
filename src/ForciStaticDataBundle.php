@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 /*
  * This file is part of the ForciStaticDataBundle package.
@@ -19,7 +19,8 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 class ForciStaticDataBundle extends Bundle {
 
-    public function build(ContainerBuilder $container) {
+    public function build(ContainerBuilder $container): void
+    {
         parent::build($container);
 
         $container->addCompilerPass(new LoadersCompiler());
